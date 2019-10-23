@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="FirstApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="../bootstrap/css/font-awesome-5.8.1.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/mdb.css">
+    <link rel="stylesheet" href="../bootstrap/css/style.css">
+    <style>
+        body{
+            margin-bottom: 300px;
+        }
+    </style>
+    <title>AngularJS First App</title>
+</head>
+
+<body >
+
+    <div class="container mt-4" ng-controller="FirstAppCtrl">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <form>
+                            <div class="form-group">
+                                <input ng-model="username" type="text" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="font-weight-bold">{{username}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Likes Button -->
+    <div class="container mt-4" ng-controller="LikesCtrl">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <button class="btn btn-success" ng-click="liked()">
+                           <i class="fa fa-thumbs-up"></i> Likes
+                        </button>
+                        <span class="text-success display-4">{{likes}}</span>
+
+                        <button class="btn btn-danger" ng-click="disliked()">
+                            <i class="fa fa-thumbs-down"></i> Dislikes
+                        </button>
+                        <span class="text-danger display-4">{{dislikes}}</span>
+
+                        <p class="text-primary display-4">Total : {{likes + dislikes}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-4" ng-controller="SelectCtrl">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col">
+                                    <select class="form-control" ng-model="option">
+                                        <option value="">Select a Technology</option>
+                                        <option value="HTML">HTML</option>
+                                        <option value="CSS">CSS</option>
+                                        <option value="JavaScript">JavaScript</option>
+                                        <option value="JQuery">JQuery</option>
+                                        <option value="Bootstrap">Bootstrap</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <span class="text-danger font-weight-bold">{{option}}</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wish Messages -->
+    <div class="container mt-4" ng-controller="WishMsgCtrl">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <form>
+                            <div class="form-group">
+                                <input ng-model="number" ng-change="displayMessage()" type="number" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="text-primary display-4">{{message}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- Body Ends -->
+<script src="../bootstrap/js/jquery-3.3.1.min.js" ></script>
+<script src="../bootstrap/js/popper.min.js" ></script>
+<script src="../bootstrap/js/bootstrap.min.js" ></script>
+<script src="../bootstrap/js/mdb.min.js" ></script>
+<script src="../angular/angular.js" ></script>
+<script src="01_app.js" ></script>
+</html>
